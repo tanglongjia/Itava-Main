@@ -46,7 +46,7 @@
         <property name="dataSource" ref="dataSource" />  
         <!-- 自动扫描mapping.xml文件 -->  
         <property name="mapperLocations" value="classpath:org/itava/dao/mapping/*.xml"></property>
-        <!-- mybatis分页插件
+        <!-- mybatis分页插件-->
         <property name="plugins">
 		    <array>
 		      <bean class="com.github.pagehelper.PageHelper">
@@ -57,7 +57,7 @@
 		        </property>
 		      </bean>
 		    </array>
-		</property>   -->
+		</property>   
     </bean>  
   
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
@@ -71,7 +71,7 @@
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
         <property name="dataSource" ref="dataSource" />  
     </bean>  
-    <!--声明式事务通知
+    <!--声明式事务通知-->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="get*" 	  propagation="REQUIRED" read-only="true" rollback-for="java.lang.Exception"/>
@@ -86,6 +86,6 @@
 	<aop:config>
 		<aop:pointcut id="serviceOperation" expression="execution(* org.itava.service..*Service.*(..))"/>
         <aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
-	</aop:config>-->
+	</aop:config>
   
 </beans>  

@@ -1,4 +1,6 @@
 package org.itava.controller;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,6 +9,8 @@ import org.itava.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.github.pagehelper.PageInfo;
   
   
 @Controller  
@@ -25,10 +29,10 @@ public class UserController {
     
     @RequestMapping("/selectUserPage")  
     public String selectUserPage(HttpServletRequest request,Model model){  
-      /*  List<User> userList = this.userService.selectUserPage(24);
+        List<User> userList = this.userService.selectUserPage(24);
         PageInfo<User> pageInfo = new PageInfo<User>(userList);
         model.addAttribute("pageInfo", pageInfo);  
-        model.addAttribute("userList", userList);*/
+        model.addAttribute("userList", userList);
         return "userPage";  
     }
 }  

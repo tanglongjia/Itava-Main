@@ -3,9 +3,7 @@
 <html lang="zh-CN">  
   <head>  
     <title>显示用户</title>  
-    <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap-paginator.min.js"></script>
+    <%@ include file="./common/head.jsp" %>
   </head>   
   <body>  
     <div class="row">

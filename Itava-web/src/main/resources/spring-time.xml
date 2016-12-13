@@ -14,10 +14,10 @@
 	<!-- 测试spring定时器是否能用 -->
     <bean id="testSpringTimeService" class="org.itava.service.impl.TestSpringTimeServiceImpl">
 	</bean>
-	
-    <task:scheduled-tasks>  
-        <!-- 每天10s执行一次 -->
+	<!-- 
+    <task:scheduled-tasks>   -->
+        <!-- 每10s执行一次 
         <task:scheduled ref="testSpringTimeService" method="testQuart" cron="0/10 * * * * ?"/>  
-    </task:scheduled-tasks>  
+    </task:scheduled-tasks>  -->
 	 
 </beans>

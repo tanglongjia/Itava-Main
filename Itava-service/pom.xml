@@ -173,11 +173,11 @@
             <artifactId>Itava-dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <!-- mybatis分页插件
+    <!-- mybatis分页插件 -->
 		<dependency>
 		    <groupId>com.github.pagehelper</groupId>
 		    <artifactId>pagehelper</artifactId>
 		    <version>4.1.6</version>
-		</dependency> -->
+		</dependency>
   </dependencies>
 </project>

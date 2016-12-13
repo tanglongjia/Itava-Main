@@ -79,11 +79,11 @@
       age = #{age,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <!-- 
+  
   <select id="selectUserPage" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from user_t
     where age = #{age,jdbcType=INTEGER}
-  </select> -->
+  </select>
 </mapper>
