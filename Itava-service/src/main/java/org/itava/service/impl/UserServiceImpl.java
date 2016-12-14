@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.itava.dao.UserDao;
-import org.itava.pojo.User;
+import org.itava.dao.BsUserMapper;
+import org.itava.pojo.BsUser;
 import org.itava.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -14,21 +14,21 @@ import com.github.pagehelper.PageHelper;
 @Service("userService")  
 public class UserServiceImpl implements UserService {  
     @Resource  
-    private UserDao userDao;
+    private BsUserMapper bsUserMapper;
 
-	public User getUserById(int userId) {
+	public BsUser getUserById(int userId) {
 		PageHelper.startPage(1, 8);
-		List<User> list = userDao.selectUserPage(24);
+		List<BsUser> list = bsUserMapper.selectUserPage(24);
 		System.out.println(list.size());
-		for (User user : list) {
+		for (BsUser user : list) {
 			System.out.println(user.toString());
 		}
-		//return this.userDao.selectByPrimaryKey(userId);  
+		//return this.bsUserMapper.selectByPrimaryKey(userId);  
 		return list.get(0);
 	}
-	public List<User> selectUserPage(int age) {
+	public List<BsUser> selectUserPage(int age) {
 		PageHelper.startPage(1, 10);
-		List<User> list = userDao.selectUserPage(24);
+		List<BsUser> list = bsUserMapper.selectUserPage(24);
 		System.out.println(list.size());
 		return list;
 	}  

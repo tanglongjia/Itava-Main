@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.itava.dao.BsRoleResourceMapper" >
+  <resultMap id="BaseResultMap" type="org.itava.pojo.BsRoleResource" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="resourceId" property="resourceid" jdbcType="INTEGER" />
+    <result column="roleId" property="roleid" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="DATE" />
+    <result column="createdby" property="createdby" jdbcType="INTEGER" />
+    <result column="updated" property="updated" jdbcType="INTEGER" />
+    <result column="updatedby" property="updatedby" jdbcType="DATE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, resourceId, roleId, created, createdby, updated, updatedby, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bs_role_resource
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bs_role_resource
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.itava.pojo.BsRoleResource" >
+    insert into bs_role_resource (id, resourceId, roleId, 
+      created, createdby, updated, 
+      updatedby, status)
+    values (#{id,jdbcType=INTEGER}, #{resourceid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, 
+      #{created,jdbcType=DATE}, #{createdby,jdbcType=INTEGER}, #{updated,jdbcType=INTEGER}, 
+      #{updatedby,jdbcType=DATE}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="org.itava.pojo.BsRoleResource" >
+    insert into bs_role_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="resourceid != null" >
+        resourceId,
+      </if>
+      <if test="roleid != null" >
+        roleId,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="createdby != null" >
+        createdby,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="updatedby != null" >
+        updatedby,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="resourceid != null" >
+        #{resourceid,jdbcType=INTEGER},
+      </if>
+      <if test="roleid != null" >
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=DATE},
+      </if>
+      <if test="createdby != null" >
+        #{createdby,jdbcType=INTEGER},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=INTEGER},
+      </if>
+      <if test="updatedby != null" >
+        #{updatedby,jdbcType=DATE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.itava.pojo.BsRoleResource" >
+    update bs_role_resource
+    <set >
+      <if test="resourceid != null" >
+        resourceId = #{resourceid,jdbcType=INTEGER},
+      </if>
+      <if test="roleid != null" >
+        roleId = #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=DATE},
+      </if>
+      <if test="createdby != null" >
+        createdby = #{createdby,jdbcType=INTEGER},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=INTEGER},
+      </if>
+      <if test="updatedby != null" >
+        updatedby = #{updatedby,jdbcType=DATE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.itava.pojo.BsRoleResource" >
+    update bs_role_resource
+    set resourceId = #{resourceid,jdbcType=INTEGER},
+      roleId = #{roleid,jdbcType=INTEGER},
+      created = #{created,jdbcType=DATE},
+      createdby = #{createdby,jdbcType=INTEGER},
+      updated = #{updated,jdbcType=INTEGER},
+      updatedby = #{updatedby,jdbcType=DATE},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

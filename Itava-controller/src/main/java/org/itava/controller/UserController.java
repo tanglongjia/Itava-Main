@@ -4,7 +4,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.itava.pojo.User;
+import org.itava.pojo.BsUser;
 import org.itava.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,17 +22,17 @@ public class UserController {
     @RequestMapping("/showUser")  
     public String toIndex(HttpServletRequest request,Model model){  
         int userId = Integer.parseInt(request.getParameter("id"));  
-        User user = this.userService.getUserById(userId);  
+        BsUser user = this.userService.getUserById(userId);  
         model.addAttribute("user", user);  
-        return "showUser";  
+        return "/user/userInit";  
     }  
     
     @RequestMapping("/selectUserPage")  
     public String selectUserPage(HttpServletRequest request,Model model){  
-        List<User> userList = this.userService.selectUserPage(24);
-        PageInfo<User> pageInfo = new PageInfo<User>(userList);
+        List<BsUser> userList = this.userService.selectUserPage(24);
+        PageInfo<BsUser> pageInfo = new PageInfo<BsUser>(userList);
         model.addAttribute("pageInfo", pageInfo);  
         model.addAttribute("userList", userList);
-        return "userPage";  
+        return "/user/userData";  
     }
 }  

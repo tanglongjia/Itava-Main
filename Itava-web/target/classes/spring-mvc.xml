@@ -8,9 +8,10 @@
                         http://www.springframework.org/schema/context    
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd    
                         http://www.springframework.org/schema/mvc    
-                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">  
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->  
     <context:component-scan base-package="org.itava.controller" />  
+    <mvc:annotation-driven/>
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->  
     <bean id="mappingJacksonHttpMessageConverter"  
         class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">  
@@ -45,6 +46,18 @@
         <property name="maxUploadSize" value="10485760000" />    
         <!-- 内存中的最大值 -->  
         <property name="maxInMemorySize" value="40960" />    
-    </bean>   
-  
+    </bean>
+    
+    <!-- - 重定向  
+    <mvc:view-controller path="/" view-name="redirect:/index"/> -->
+    <!-- 当在web.xml 中   DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源
+            的DispatcherServlet拦截 *.do这样的URL，就不存在访问不到静态资源的问题。如果你的DispatcherServlet拦截“/”，拦截了所有的请求，同时对*.js,*.jpg的访问也就被拦截了。
+           目的：可以正常访问静态文件，不要找不到静态文件报404。-->  
+    <mvc:default-servlet-handler/>  
+  	<!-- 静态资源映射 -->
+    <mvc:resources mapping="/aframe/**" location="/aframe/"/>
+    <mvc:resources mapping="/commonjs/**" location="/commonjs/"/>
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/> 
+  	
 </beans>  
