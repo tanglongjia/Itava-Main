@@ -196,4 +196,11 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="getLeftMenu" parameterType="java.util.Map" resultType="org.itava.pojo.BsResource">
+		select <include refid="Base_Column_List" />
+		from bs_resource
+		where parentId = #{parentid,jdbcType=INTEGER}
+	</select>
+  
 </mapper>

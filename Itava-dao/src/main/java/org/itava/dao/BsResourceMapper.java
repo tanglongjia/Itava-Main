@@ -1,5 +1,8 @@
 package org.itava.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.itava.pojo.BsResource;
 
 public interface BsResourceMapper {
@@ -14,4 +17,6 @@ public interface BsResourceMapper {
     int updateByPrimaryKeySelective(BsResource record);
 
     int updateByPrimaryKey(BsResource record);
+    
+    List<BsResource> getLeftMenu(Map<String, Integer> paramMap);
 }

@@ -1,6 +1,8 @@
 package org.itava.pojo;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class BsResource {
     private Integer id;
@@ -30,6 +32,8 @@ public class BsResource {
     private Integer updatedby;
 
     private Integer status;
+    
+    private List<BsResource> childList=new ArrayList<BsResource>();
 
     public Integer getId() {
         return id;
@@ -142,4 +146,12 @@ public class BsResource {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+	public List<BsResource> getChildList() {
+		return childList;
+	}
+
+	public void setChildList(List<BsResource> childList) {
+		this.childList = childList;
+	}
 }
