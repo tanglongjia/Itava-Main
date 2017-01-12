@@ -221,11 +221,20 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   
-  	<!-- <select id="selectUserPage" resultType="org.itava.pojo.BsUser" parameterType="java.lang.Integer" >
+  	<select id="selectUserPage" resultType="org.itava.pojo.BsUser" parameterType="java.util.Map" >
 	    select 
 	    <include refid="Base_Column_List" />
 	    from bs_user
-	    where age = #{age,jdbcType=INTEGER}
-	  </select> -->
+	    where 1 = 1 
+	    <if test="departid != null" >
+	    		AND departId = #{departid,jdbcType=INTEGER}
+	    </if>
+	    <if test="truename != null and truename !='' " >
+        		AND trueName like '%${truename}%'
+      	</if>
+      	<if test="telephone != null and telephone !='' " >
+        		AND telephone like '%${telephone}%'
+      	</if>
+	  </select>
   
 </mapper>

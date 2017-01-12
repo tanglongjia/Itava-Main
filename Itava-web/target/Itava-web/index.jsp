@@ -4,22 +4,69 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>学习Bootstrap框架</title>
+  <title>AdminLTE 2 | Starter</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <%@ include file="WEB-INF/jsp/common/head.jsp"%>
+  <script type="text/javascript">
+	$(function(){
+		getLeftMenu();
+		var item = {'id':'-1','name':'首页','url':'welcome.jsp','closable':false};
+		closableTab.addTab(item);
+	})
+
+    function getLeftMenu(){
+    	$.ajax({  
+		     url:'<%=basePath%>/bsResource/getLeftMenu',
+		     type:'get',  
+		     cache:false,  
+		     dataType:'json',  
+		     success:function(data) {
+		    		renderMenu(data);
+		     },  
+		     error : function() {  
+		    	 console.log('getLeftMenu() error...');
+		     }  
+		 });
+      }
+	//生成菜单树
+	function renderMenu(data) {
+		$.each(data, function(index, val) {
+			var thli = $('<li class="treeview"><a onclick="LoadAjaxContent(\''+data[index].id+'\',\''+data[index].menuname+'\',\''+data[index].menuurl+'\',\''+data[index].isleafnode+'\')"><i class="fa fa-dashboard"></i><span>'+data[index].menuname+'</span><i class="fa fa-angle-left pull-right"></i></a></li>');
+			if(data[index].childList.length  > 0){
+				var ej = '<ul class="treeview-menu">  </ul>';	
+				var thej  = $(ej).appendTo(thli);
+				var chs  = data[index].childList;
+				$.each(chs, function(index2, val) {
+	  				var sj = $('<li><a onclick="LoadAjaxContent(\''+chs[index2].id+'\',\''+chs[index2].menuname+'\',\''+chs[index2].menuurl+'\',\''+chs[index2].isleafnode+'\')" class="ajax-link" ><i class="fa fa-circle-o"></i>'+chs[index2].menuname+'</a></li>').appendTo(thej);
+				});
+			}
+			$(thli).appendTo('#leftMenu');
+		});
+	}
+
+	 function LoadAjaxContent(id,menuname,url,isleafnode){
+		 	if(isleafnode==1){//根节点
+		 		var item = {'id':id,'name':menuname,'url':url,'closable':true};
+				closableTab.addTab(item);
+		 	}
+			
+	}
+
+</script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
+
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>T</b>系统</span>
+      <span class="logo-mini"><b>Itava</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>TonyJ</b>系统</span>
+      <span class="logo-lg"><b>Itava-Main</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -47,7 +94,7 @@
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="<%=basePath %>/aframe/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -131,14 +178,14 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<%=basePath %>/aframe/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<%=basePath %>/aframe/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Alexander Pierce - Web Developer
@@ -166,7 +213,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="login.html" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -188,18 +235,19 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<%=basePath %>/aframe/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>TonyJ</p>
-          <i class="fa fa-circle text-success"></i> 管理员
+          <p>Alexander Pierce</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
 
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="搜索...">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -208,9 +256,10 @@
       </form>
       <!-- /.search form -->
 
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" id="leftMenu" style="font-size: 14px;">
-        	
+      <!-- Sidebar Menu 左侧菜单目录 -->
+      <ul class="sidebar-menu" id="leftMenu">
+        <!-- Optionally, you can add icons to the links -->
+     
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -221,10 +270,6 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
@@ -232,9 +277,15 @@
     </section>
 
     <!-- Main content -->
-    <section class="content" id="ajax-content">
-
-
+    <section class="content">
+		<div class="row" style="margin-left: 3px;">
+		  <!-- 此处是相关代码 -->
+		  <ul class="nav nav-tabs" role="tablist">
+		  </ul>
+		  <div class="tab-content" style="width:99%;">
+		  </div>
+		  <!-- 相关代码结束 -->
+		</div>
     </section>
     <!-- /.content -->
   </div>
@@ -244,10 +295,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-		Just do it !
+      Just do it
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="http://tonyj.iteye.com/admin">TonyJ</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016<a href="#">TonyJ</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -326,71 +377,5 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<script type="text/javascript">
-    var thdata = [];
-    function getLeftMenu(){
-    	$.ajax({  
-		     url:'<%=basePath%>getLeftMenu',// 跳转到 contorller  
-		     data:{},  
-		     type:'get',  
-		     cache:false,  
-		     dataType:'json',  
-		     success:function(data) {
-		     	$("#leftMenu").html("");
-				$.each(data, function(index, val) {
-					var thli = $('<li class="treeview"><a href="javascript:void(0)"><i class="fa fa-dashboard"></i><span>'+data[index].menuName+'</span><i class="fa fa-angle-left pull-right"></i></a></li>');
-					if(data[index].childList.length  > 0){
-						var ej = '<ul class="treeview-menu">  </ul>';	
-						var thej  = $(ej).appendTo(thli);
-						var chs  = data[index].childList;
-						$.each(chs, function(index2, val) {
-			  				var sj = $('<li><a href="./bsUserIndex" class="ajax-link" ><i class="fa fa-circle-o"></i>'+chs[index2].menuName+'</a></li>').appendTo(thej);
-			  				var child_data = {"menuName":chs[index2].menuName,"menuUrl":chs[index2].menuUrl,"menuCode":chs[index2].menuCode};
-							thdata.push(child_data);
-						});
-					}
-					$(thli).appendTo('#leftMenu');
-				});
-
-				$('#leftMenu').on('click', 'a', function (e) {
-					if ($(this).hasClass('ajax-link')) {
-						e.preventDefault();
-						var url = $(this).attr('href');
-						window.location.hash = url;
-						//alert(url);
-						LoadAjaxContent(url);
-					}
-				});
-
-				//var ajax_url = location.hash.replace(/^#/, '');
-				//LoadAjaxContent(ajax_url);
-		      },  
-		     error : function() {  
-		      }  
-		 });
-      }
-      
-      
-	 getLeftMenu();
-
-
-	 function LoadAjaxContent(url){
-			$.ajax({
-				mimeType: 'text/html; charset=utf-8',
-				url: url,
-				type: 'GET',
-				success: function(data) {
-					$('#ajax-content').html(data);
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-					alert(errorThrown);
-				},
-				dataType: "html",
-				async: false
-			});
-	}
-
-</script>
 </body>
 </html>

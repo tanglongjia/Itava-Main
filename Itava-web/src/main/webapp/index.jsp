@@ -8,6 +8,52 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <%@ include file="WEB-INF/jsp/common/head.jsp"%>
+  <script type="text/javascript">
+	$(function(){
+		getLeftMenu();
+		var item = {'id':'-1','name':'首页','url':'welcome.jsp','closable':false};
+		closableTab.addTab(item);
+	})
+
+    function getLeftMenu(){
+    	$.ajax({  
+		     url:'<%=basePath%>/bsResource/getLeftMenu',
+		     type:'get',  
+		     cache:false,  
+		     dataType:'json',  
+		     success:function(data) {
+		    		renderMenu(data);
+		     },  
+		     error : function() {  
+		    	 console.log('getLeftMenu() error...');
+		     }  
+		 });
+      }
+	//生成菜单树
+	function renderMenu(data) {
+		$.each(data, function(index, val) {
+			var thli = $('<li class="treeview"><a onclick="LoadAjaxContent(\''+data[index].id+'\',\''+data[index].menuname+'\',\''+data[index].menuurl+'\',\''+data[index].isleafnode+'\')"><i class="fa fa-dashboard"></i><span>'+data[index].menuname+'</span><i class="fa fa-angle-left pull-right"></i></a></li>');
+			if(data[index].childList.length  > 0){
+				var ej = '<ul class="treeview-menu">  </ul>';	
+				var thej  = $(ej).appendTo(thli);
+				var chs  = data[index].childList;
+				$.each(chs, function(index2, val) {
+	  				var sj = $('<li><a onclick="LoadAjaxContent(\''+chs[index2].id+'\',\''+chs[index2].menuname+'\',\''+chs[index2].menuurl+'\',\''+chs[index2].isleafnode+'\')" class="ajax-link" ><i class="fa fa-circle-o"></i>'+chs[index2].menuname+'</a></li>').appendTo(thej);
+				});
+			}
+			$(thli).appendTo('#leftMenu');
+		});
+	}
+
+	 function LoadAjaxContent(id,menuname,url,isleafnode){
+		 	if(isleafnode==1){//根节点
+		 		var item = {'id':id,'name':menuname,'url':url,'closable':true};
+				closableTab.addTab(item);
+		 	}
+			
+	}
+
+</script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -210,9 +256,10 @@
       </form>
       <!-- /.search form -->
 
-      <!-- Sidebar Menu -->
+      <!-- Sidebar Menu 左侧菜单目录 -->
       <ul class="sidebar-menu" id="leftMenu">
-        
+        <!-- Optionally, you can add icons to the links -->
+     
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -223,10 +270,6 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
@@ -235,9 +278,14 @@
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- Your Page Content Here -->
-
+		<div class="row" style="margin-left: 3px;">
+		  <!-- 此处是相关代码 -->
+		  <ul class="nav nav-tabs" role="tablist" id="tabUl">
+		  </ul>
+		  <div class="tab-content" style="width:99%;">
+		  </div>
+		  <!-- 相关代码结束 -->
+		</div>
     </section>
     <!-- /.content -->
   </div>
@@ -253,77 +301,6 @@
     <strong>Copyright &copy; 2016<a href="#">TonyJ</a>.</strong> All rights reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
@@ -331,68 +308,3 @@
 <!-- ./wrapper -->
 </body>
 </html>
-<script type="text/javascript">
-    var thdata = [];
-    function getLeftMenu(){
-    	$.ajax({  
-		     url:'<%=basePath%>/bsResource/getLeftMenu',// 跳转到 contorller  
-		     data:{},  
-		     type:'get',  
-		     cache:false,  
-		     dataType:'json',  
-		     success:function(data) {
-		     	$("#leftMenu").html("");
-				$.each(data, function(index, val) {
-					var thli = $('<li class="treeview"><a href="javascript:void(0)"><i class="fa fa-dashboard"></i><span>'+data[index].menuname+'</span><i class="fa fa-angle-left pull-right"></i></a></li>');
-					if(data[index].childList.length  > 0){
-						var ej = '<ul class="treeview-menu">  </ul>';	
-						var thej  = $(ej).appendTo(thli);
-						var chs  = data[index].childList;
-						$.each(chs, function(index2, val) {
-			  				var sj = $('<li><a href="<%=basePath%>/bsUser/showUser" class="ajax-link" ><i class="fa fa-circle-o"></i>'+chs[index2].menuname+'</a></li>').appendTo(thej);
-			  				var child_data = {"menuname":chs[index2].menuname,"menuurl":chs[index2].menuUrl,"menucode":chs[index2].menucode};
-							thdata.push(child_data);
-						});
-					}
-					$(thli).appendTo('#leftMenu');
-				});
-
-				$('#leftMenu').on('click', 'a', function (e) {
-					if ($(this).hasClass('ajax-link')) {
-						e.preventDefault();
-						var url = $(this).attr('href');
-						window.location.hash = url;
-						//alert(url);
-						LoadAjaxContent(url);
-					}
-				});
-
-				//var ajax_url = location.hash.replace(/^#/, '');
-				//LoadAjaxContent(ajax_url);
-		      },  
-		     error : function() {  
-		      }  
-		 });
-      }
-      
-      
-	 getLeftMenu();
-
-
-	 function LoadAjaxContent(url){
-			$.ajax({
-				mimeType: 'text/html; charset=utf-8',
-				url: url,
-				type: 'GET',
-				success: function(data) {
-					$('#ajax-content').html(data);
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-					alert(errorThrown);
-				},
-				dataType: "html",
-				async: false
-			});
-	}
-
-</script>

@@ -1,6 +1,7 @@
 package org.itava.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -26,10 +27,14 @@ public class BsUserServiceImpl implements BsUserService {
 		return this.bsUserMapper.selectByPrimaryKey(userId);  
 		//return list.get(0);
 	}
-	public List<BsUser> selectUserPage(int age) {
-		PageHelper.startPage(1, 10);
-		List<BsUser> list = bsUserMapper.selectUserPage(24);
-		System.out.println(list.size());
+	public List<BsUser> selectUserPage(Map param) {
+		String page  = (String) param.get("page");
+		int pageNum = 1;
+		if(page!=null && page !=""){
+			pageNum = Integer.parseInt(page);
+		}
+		PageHelper.startPage((pageNum-1)*10+1, pageNum*10);
+		List<BsUser> list = bsUserMapper.selectUserPage(param);
 		return list;
 	}  
     

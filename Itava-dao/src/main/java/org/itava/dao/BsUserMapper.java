@@ -1,6 +1,7 @@
 package org.itava.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.itava.pojo.BsUser;
 
@@ -17,5 +18,5 @@ public interface BsUserMapper {
 
     int updateByPrimaryKey(BsUser record);
     
-    List<BsUser> selectUserPage(Integer age);
+    List<BsUser> selectUserPage(Map param);
 }

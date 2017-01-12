@@ -392,7 +392,6 @@ function _init() {
       //Get the clicked link and the next element
       var $this = $(this);
       var checkElement = $this.next();
-
       //Check if the next element is a menu and is visible
       if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible')) && (!$('body').hasClass('sidebar-collapse'))) {
         //Close the menu

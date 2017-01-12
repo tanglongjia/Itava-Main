@@ -34,7 +34,10 @@
 	<listener>
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
-
+	<!-- log4j打印 -->
+	<listener>
+     	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+ 	</listener>
 	<!-- Spring MVC servlet -->
 	<servlet>
 		<servlet-name>SpringMVC</servlet-name>
@@ -82,9 +85,21 @@
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.css</url-pattern>
 	</servlet-mapping>
-
+	
+	<!-- 默认的错误处理页面 -->  
+    <error-page>  
+        <error-code>404</error-code>  
+        <location>/WEB-INF/jsp/common/404.jsp</location>  
+    </error-page>  
+    <!-- 这样配置也是可以的，表示发生500错误的时候，转到500.jsp页面处理。 -->  
+    <error-page>   
+        <error-code>500</error-code>   
+        <location>/WEB-INF/jsp/common/500.jsp</location>   
+    </error-page> 
+	
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>
-
+	
+	 
 </web-app>  
