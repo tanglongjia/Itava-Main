@@ -25,3 +25,4 @@ Itava-util是通用的工具类实现模块
 ##系统示意图
 ![用户示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/1.png)
 ![报表示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/2.png)
+![表单校验](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/3.png)
