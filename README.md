@@ -20,5 +20,5 @@ Itava-util是通用的工具类实现模块
 系统的报表展示使用echart3实现
 
 ##系统示意图
-![用户示例](E:\1.png)
-![报表示例](E:\2.png)
+![用户示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/1.png)
+![报表示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/2.png)
