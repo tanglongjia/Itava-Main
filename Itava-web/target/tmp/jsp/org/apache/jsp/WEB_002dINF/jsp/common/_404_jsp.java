@@ -114,10 +114,10 @@ public final class _404_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script src=\"");
       out.print(basePath);
       out.write("/aframe/datatables/dataTables.bootstrap.min.js\"></script>\r\n");
-      out.write("<!-- 固定菜单的滚动效果 -->\r\n");
+      out.write("<!-- 固定菜单的滚动效果-->\r\n");
       out.write("<script src=\"");
       out.print(basePath);
-      out.write("/aframe/slimScroll/jquery.slimscroll.min.js\"></script>\r\n");
+      out.write("/aframe/slimScroll/jquery.slimscroll.min.js\"></script> \r\n");
       out.write("<!-- 分页插件 -->\r\n");
       out.write("<script src=\"");
       out.print(basePath);
@@ -126,6 +126,10 @@ public final class _404_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(basePath);
       out.write("/commonjs/closable-tab-div.js\"></script>\r\n");
+      out.write("<!-- 自定义通用js方法 -->\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(basePath);
+      out.write("/commonjs/self_define.js\"></script>\r\n");
       out.write("\r\n");
       out.write("<div class=\"error-page\">\r\n");
       out.write("\t<h2 class=\"headline text-yellow\">404</h2>\r\n");

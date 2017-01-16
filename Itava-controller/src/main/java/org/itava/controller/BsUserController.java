@@ -27,7 +27,7 @@ public class BsUserController {
     public String toIndex(HttpServletRequest request,Model model){ 
         BsUser user = this.bsUserService.getUserById(new Integer(1));  
         model.addAttribute("user", user);  
-        return "user/userInit";  
+        return "bsUser";  
     }  
     
     @RequestMapping("/selectUserPage")  

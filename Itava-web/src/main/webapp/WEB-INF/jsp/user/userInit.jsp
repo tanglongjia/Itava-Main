@@ -57,7 +57,7 @@
 	function search(){
 		$.ajax({
 			mimeType: 'text/html; charset=utf-8',
-			url: './bsUser/selectUserPage',
+			url: './selectUserPage',
 			type: 'GET',
 			data : {
 				truename  : $("#truename").val(),

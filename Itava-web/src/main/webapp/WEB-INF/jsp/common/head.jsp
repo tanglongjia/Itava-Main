@@ -29,9 +29,11 @@
 <!-- DataTable的js文件 -->
 <script src="<%=basePath%>/aframe/datatables/jquery.dataTables.js"></script>
 <script src="<%=basePath%>/aframe/datatables/dataTables.bootstrap.min.js"></script>
-<!-- 固定菜单的滚动效果 -->
-<script src="<%=basePath%>/aframe/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- 固定菜单的滚动效果-->
+<script src="<%=basePath%>/aframe/slimScroll/jquery.slimscroll.min.js"></script> 
 <!-- 分页插件 -->
 <script src="<%=basePath%>/aframe/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- 标签页插件 -->
 <script type="text/javascript" src="<%=basePath%>/commonjs/closable-tab-div.js"></script>
+<!-- 自定义通用js方法 -->
+<script type="text/javascript" src="<%=basePath%>/commonjs/self_define.js"></script>

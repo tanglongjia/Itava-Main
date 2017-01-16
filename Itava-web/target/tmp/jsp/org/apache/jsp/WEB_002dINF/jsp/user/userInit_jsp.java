@@ -114,10 +114,10 @@ public final class userInit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script src=\"");
       out.print(basePath);
       out.write("/aframe/datatables/dataTables.bootstrap.min.js\"></script>\r\n");
-      out.write("<!-- 固定菜单的滚动效果 -->\r\n");
+      out.write("<!-- 固定菜单的滚动效果-->\r\n");
       out.write("<script src=\"");
       out.print(basePath);
-      out.write("/aframe/slimScroll/jquery.slimscroll.min.js\"></script>\r\n");
+      out.write("/aframe/slimScroll/jquery.slimscroll.min.js\"></script> \r\n");
       out.write("<!-- 分页插件 -->\r\n");
       out.write("<script src=\"");
       out.print(basePath);
@@ -126,6 +126,10 @@ public final class userInit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(basePath);
       out.write("/commonjs/closable-tab-div.js\"></script>\r\n");
+      out.write("<!-- 自定义通用js方法 -->\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(basePath);
+      out.write("/commonjs/self_define.js\"></script>\r\n");
       out.write("\r\n");
       out.write("<form class=\"form-horizontal\">\r\n");
       out.write("\t<div class=\"box\">\r\n");
@@ -180,7 +184,7 @@ public final class userInit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tfunction search(){\r\n");
       out.write("\t\t$.ajax({\r\n");
       out.write("\t\t\tmimeType: 'text/html; charset=utf-8',\r\n");
-      out.write("\t\t\turl: './bsUser/selectUserPage',\r\n");
+      out.write("\t\t\turl: './selectUserPage',\r\n");
       out.write("\t\t\ttype: 'GET',\r\n");
       out.write("\t\t\tdata : {\r\n");
       out.write("\t\t\t\ttruename  : $(\"#truename\").val(),\r\n");

@@ -23,7 +23,7 @@ var closableTab = {
 	    				   '</div>';
 
 
-			$('.nav-tabs').append(li_tab);
+			$('#tabUl').append(li_tab);
 			$('.tab-content').append(tabpanel);
 			$('#'+container).load(tabItem.url,function(response,status,xhr){
 				if(status=='error'){//status的值为success和error，如果error则显示一个错误页面
@@ -45,8 +45,10 @@ var closableTab = {
    	    	$('#'+containerId).prev().addClass('active');
    	    }
 
-
+   	    
 		$("#"+val).remove();
 		$("#"+containerId).remove();
+		
+		$("#tab_seed_"+containerId).remove();
 	}
 }

@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:16 +0800] "GET /itava/main/index HTTP/1.1" 302 0 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:16 +0800] "GET /itava/user/showUser HTTP/1.1" 200 2703 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:19 +0800] "GET /itava/aframe/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:19 +0800] "GET /itava/aframe/adminlte/css/skins/skin-blue.min.css HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:19 +0800] "GET /itava/aframe/adminlte/css/AdminLTE.min.css HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:19 +0800] "GET /itava/commonjs/closable-tab-div.js HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [16/一月/2017:09:40:19 +0800] "GET /itava/commonjs/self_define.js HTTP/1.1" 304 0 
