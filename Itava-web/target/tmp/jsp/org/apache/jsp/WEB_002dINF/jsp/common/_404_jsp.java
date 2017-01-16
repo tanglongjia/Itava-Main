@@ -130,6 +130,13 @@ public final class _404_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(basePath);
       out.write("/commonjs/self_define.js\"></script>\r\n");
+      out.write("<!-- 引入echart3的图表js文件 -->\r\n");
+      out.write("<script src=\"");
+      out.print(basePath);
+      out.write("/aframe/echart3/echarts.min.js\"></script>\r\n");
+      out.write("<script src=\"");
+      out.print(basePath);
+      out.write("/aframe/echart3/option_public.js\"></script>\r\n");
       out.write("\r\n");
       out.write("<div class=\"error-page\">\r\n");
       out.write("\t<h2 class=\"headline text-yellow\">404</h2>\r\n");

@@ -37,3 +37,6 @@
 <script type="text/javascript" src="<%=basePath%>/commonjs/closable-tab-div.js"></script>
 <!-- 自定义通用js方法 -->
 <script type="text/javascript" src="<%=basePath%>/commonjs/self_define.js"></script>
+<!-- 引入echart3的图表js文件 -->
+<script src="<%=basePath%>/aframe/echart3/echarts.min.js"></script>
+<script src="<%=basePath%>/aframe/echart3/option_public.js"></script>

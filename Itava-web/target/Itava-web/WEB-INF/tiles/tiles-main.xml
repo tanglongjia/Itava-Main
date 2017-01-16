@@ -13,4 +13,8 @@
     <put-attribute name="rightContent" value="/WEB-INF/jsp/user/userInit.jsp"/>
   </definition>
   
+   <definition name="report" extends="main">
+    <put-attribute name="rightContent" value="/WEB-INF/jsp/report/reportInit.jsp"/>
+  </definition>
+  
 </tiles-definitions>

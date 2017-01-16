@@ -140,6 +140,13 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(basePath);
       out.write("/commonjs/self_define.js\"></script>\r\n");
+      out.write("<!-- 引入echart3的图表js文件 -->\r\n");
+      out.write("<script src=\"");
+      out.print(basePath);
+      out.write("/aframe/echarts3/echarts.min.js\"></script>\r\n");
+      out.write("<script src=\"");
+      out.print(basePath);
+      out.write("/aframe/echarts3/option_public.js\"></script>\r\n");
       out.write("\r\n");
       out.write("<style type=\"text/css\">\r\n");
       out.write(".content-header .breadcrumb {\r\n");
