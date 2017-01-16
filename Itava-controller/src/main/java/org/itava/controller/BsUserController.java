@@ -56,4 +56,9 @@ public class BsUserController {
         model.addAttribute("userList", userList);
         return "/user/userData";  
     }
+    
+    @RequestMapping("/userAdd")  
+    public String userAdd(HttpServletRequest request,Model model){ 
+        return "/user/userAdd";  
+    }  
 }  

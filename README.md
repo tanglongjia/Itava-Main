@@ -19,6 +19,9 @@ Itava-util是通用的工具类实现模块
 ##echart3报表
 系统的报表展示使用echart3实现
 
+##echart3报表
+使用formValiator进行表单校验
+
 ##系统示意图
 ![用户示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/1.png)
 ![报表示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/2.png)

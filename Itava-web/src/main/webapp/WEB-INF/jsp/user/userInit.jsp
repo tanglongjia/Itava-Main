@@ -31,7 +31,8 @@
 						placeholder="手机号">
 				</div>
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-info pull-right" id="search">查询</button>
+					<button type="button" class="btn btn-info pull-right" style="margin-left: 3px;" id="search">查询</button>
+					<button type="button" class="btn btn-info pull-right"  id="add">新增</button>
 				</div>
 			</div>
 		</div>
@@ -51,7 +52,20 @@
 		$("#search").on("click",function(){
 			search();
 		});
+		$("#add").on("click",function(){
+			add();
+		});
 	})
+	
+	//弹出新增页面
+	var addUserDialog = null;
+	function add(){
+		addUserDialog = BootstrapDialog.show({
+			title:'新增用户',
+			size: BootstrapDialog.SIZE_WIDE,
+			message: $('<div></div>').load('./userAdd')
+		});
+	}
 	
 	function search(){
 		$.ajax({

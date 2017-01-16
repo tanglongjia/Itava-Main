@@ -20,17 +20,12 @@
 		</div>
 		<div class="box-body">
 			<div class="form-group">
-				<label for="用户名" class="col-sm-1 control-label">用户名：</label>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="truename"
-						placeholder="用户名">
-				</div>
-				<label for="手机号" class="col-sm-1 control-label">手机号：</label>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="telephone"
-						placeholder="手机号">
-				</div>
+				<label for="报表名称" class="col-sm-2 control-label">报表名称：</label>
 				<div class="col-sm-4">
+					<input type="text" class="form-control" id="truename"
+						placeholder="报表名称">
+				</div>
+				<div class="col-sm-6">
 					<button type="button" class="btn btn-info pull-right" id="search">查询</button>
 				</div>
 			</div>
@@ -39,26 +34,72 @@
 	</div>
 </form>
 <!-- /.box -->
-<div class="box">
 	<div class="row" >
-		 <div class="col-lg-5" id="rep1">
-		 
+		 <div class="col-lg-6" >
+		 	<div class="box">
+     			<div class="box-header with-border">
+	           		<span style="color:#036EB7" class="box_title" >demo1</span>
+	           		<div class="box-tools pull-right">
+		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+		                </button>
+		                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+		            </div>
+	            </div>
+		    	<div class="box-body" id="rep1" style="height: 350px;">
+		    	</div>
+		    </div>
 		 </div>
-		 <div class="col-lg-5" id="rep2" >
-		 
+		 <div class="col-lg-6">
+		 	<div class="box">
+     			<div class="box-header with-border">
+	           		<span style="color:#036EB7" class="box_title" >demo2</span>
+	           		<div class="box-tools pull-right">
+		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+		                </button>
+		                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+		            </div>
+	            </div>
+		    	<div class="box-body" id="rep2" style="height: 350px;">
+		    	</div>
+		    </div>
 		 </div>
 	</div>
 	<div class="row" >
-		 <div class="col-lg-5" id="rep3">
-		 
+		 <div class="col-lg-6">
+		 	<div class="box">
+     			<div class="box-header with-border">
+	           		<span style="color:#036EB7" class="box_title" >demo3</span>
+	           		<div class="box-tools pull-right">
+		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+		                </button>
+		                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+		            </div>
+	            </div>
+		    	<div class="box-body" id="rep3" style="height: 350px;">
+		    	</div>
+		    </div>
 		 </div>
-		 <div class="col-lg-5" id="rep4" >
-		 
+		 <div class="col-lg-6">
+		 	<div class="box">
+     			<div class="box-header with-border">
+	           		<span style="color:#036EB7" class="box_title" >demo4</span>
+	           		<div class="box-tools pull-right">
+		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+		                </button>
+		                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+		            </div>
+	            </div>
+		    	<div class="box-body" id="rep4" style="height: 350px;">
+		    	</div>
+		    </div>
 		 </div>
 	</div>
-</div>
 <script type="text/javascript">
 	$(function(){
+		rep1();
+		rep2();
+		rep3();
+		rep4();
 	});
 	
 	function rep1(){
@@ -76,7 +117,14 @@
 		    title: {
 		        text: '特性示例：渐变色 阴影 点击缩放',
 		        subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
-		    },
+		    }, 
+		    color: [
+			            '#44CDF5',
+			            '#92DA00',
+			            '#F9C61B',
+			            '#32cd32',
+			            '#6495ed'
+			     ],
 		    xAxis: {
 		        data: dataAxis,
 		        axisLabel: {
@@ -172,6 +220,13 @@
 			        text: '未来一周气温变化',
 			        subtext: '纯属虚构'
 			    },
+			    color: [
+			            '#44CDF5',
+			            '#92DA00',
+			            '#F9C61B',
+			            '#32cd32',
+			            '#6495ed'
+			     ],
 			    tooltip: {
 			        trigger: 'axis'
 			    },
@@ -255,13 +310,19 @@
 	
 	function rep3(){
 		var myChart = echarts.init($('#rep3')[0]); 
-		app.title = '嵌套环形图';
 
 		option = {
 		    tooltip: {
 		        trigger: 'item',
 		        formatter: "{a} <br/>{b}: {c} ({d}%)"
 		    },
+		    color: [
+		            '#44CDF5',
+		            '#92DA00',
+		            '#F9C61B',
+		            '#32cd32',
+		            '#6495ed'
+		     ],
 		    legend: {
 		        orient: 'vertical',
 		        x: 'left',
@@ -313,12 +374,18 @@
 	
 	function rep4(){
 		var myChart = echarts.init($('#rep4')[0]);
-		app.title = '折柱混合';
 
 		option = {
 		    tooltip: {
 		        trigger: 'axis'
 		    },
+		    color: [
+		            '#44CDF5',
+		            '#92DA00',
+		            '#F9C61B',
+		            '#32cd32',
+		            '#6495ed'
+		     ],
 		    toolbox: {
 		        feature: {
 		            dataView: {show: true, readOnly: false},

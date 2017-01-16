@@ -14,7 +14,11 @@
 <!-- bootstrap table的样式 -->
 <link rel="stylesheet" href="<%=basePath %>/aframe/bootstrap-table/bootstrap-table.css">
 <!-- DataTables的样式 -->
-  <link rel="stylesheet" href="<%=basePath %>/aframe/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="<%=basePath %>/aframe/datatables/dataTables.bootstrap.css">
+<!-- bootstrap dialog的样式 -->
+<link rel="stylesheet" href="<%=basePath %>/aframe/bootstrap-dialog/bootstrap-dialog.min.css">
+<!-- 表单校验的bootstrap validator -->
+<link rel="stylesheet" href="<%=basePath %>/aframe/formValidation/formValidation.css">
 
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jquery js文件 -->
@@ -40,3 +44,8 @@
 <!-- 引入echart3的图表js文件 -->
 <script src="<%=basePath%>/aframe/echarts3/echarts.min.js"></script>
 <script src="<%=basePath%>/aframe/echarts3/option_public.js"></script>
+<!-- bootstrap dialog的js-->
+<script src="<%=basePath%>/aframe/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+<!-- 表单校验的js formValidator.js -->
+<script src="<%=basePath %>/aframe/formValidation/formValidation.js"></script>
+<script src="<%=basePath %>/aframe/formValidation/formValidation_extra.js"></script>
