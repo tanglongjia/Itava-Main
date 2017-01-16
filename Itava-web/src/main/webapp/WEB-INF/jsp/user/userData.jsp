@@ -49,7 +49,7 @@ $('#example').bootstrapPaginator({
         return "" ;
     },
     onPageClicked: function (event, originalEvent, type, page) {
-        $.get('./bsUser/selectUserPage' , { currentPage: page, pageSize:10 }, function (view) {
+        $.get('./selectUserPage' , { currentPage: page, pageSize:10 }, function (view) {
             $('#user_table').html(view);
         });
     }

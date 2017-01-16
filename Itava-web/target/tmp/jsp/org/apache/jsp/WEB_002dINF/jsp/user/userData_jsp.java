@@ -97,7 +97,7 @@ public final class userData_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        return \"\" ;\r\n");
       out.write("    },\r\n");
       out.write("    onPageClicked: function (event, originalEvent, type, page) {\r\n");
-      out.write("        $.get('./bsUser/selectUserPage' , { currentPage: page, pageSize:10 }, function (view) {\r\n");
+      out.write("        $.get('./selectUserPage' , { currentPage: page, pageSize:10 }, function (view) {\r\n");
       out.write("            $('#user_table').html(view);\r\n");
       out.write("        });\r\n");
       out.write("    }\r\n");
