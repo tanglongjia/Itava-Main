@@ -20,7 +20,7 @@ Itava-Main为主模块，本项目为maven多模块项目，使用spring mvc、s
 ##echart3报表
 系统的报表展示使用echart3实现
 
-##echart3报表
+##jquery的formValiator插件
 使用formValiator进行表单校验
 
 ##系统示意图
