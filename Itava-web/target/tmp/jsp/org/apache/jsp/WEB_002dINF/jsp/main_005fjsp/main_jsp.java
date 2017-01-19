@@ -225,9 +225,10 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t \tif(isleafnode==1){//根节点\r\n");
       out.write("\t\t \t\t/* var item = {'id':id,'name':menuname,'url':url,'closable':true};\r\n");
       out.write("\t\t\t\tclosableTab.addTab(item); */\r\n");
-      out.write("\t\t \t\twindow.location = \"");
+      out.write("\t\t \t\tvar urlStr = \"");
       out.print(basePath);
       out.write("/\"+url;\r\n");
+      out.write("\t\t \t\t$('#commonFrame').attr('src',urlStr);\r\n");
       out.write("\t\t \t}   \r\n");
       out.write("\t\t \t//$(\"#contentDiv\").html(menuname);\r\n");
       out.write("\t\t\t\r\n");
@@ -245,32 +246,25 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_tiles_insertAttribute_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t<!-- Content Wrapper. Contains page content -->\r\n");
       out.write("\t\t<div class=\"content-wrapper\">\r\n");
-      out.write("\t\t\t<!-- Content Header (Page header) -->\r\n");
       out.write("\t\t\t<section class=\"content-header\">\r\n");
       out.write("\t\t\t\t<ol class=\"breadcrumb\">\r\n");
       out.write("\t\t\t\t\t<li id=\"title_dh\"></li>\r\n");
       out.write("\t\t\t\t</ol>\r\n");
       out.write("\t\t\t</section>\r\n");
-      out.write("\t\t\t<!-- Main content -->\r\n");
       out.write("\t\t\t<section class=\"content\">\r\n");
       out.write("\t\t\t\t");
       if (_jspx_meth_tiles_insertAttribute_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\t\t\t</section>\r\n");
-      out.write("\t\t\t<!-- /.content -->\r\n");
       out.write("\t\t</div>\r\n");
-      out.write("\t\t<!-- /.content-wrapper -->\r\n");
       out.write("\t\t");
       if (_jspx_meth_tiles_insertAttribute_3(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t<!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->\r\n");
       out.write("\t\t<div class=\"control-sidebar-bg\"></div>\r\n");
       out.write("\t</div>\r\n");
-      out.write("\t<!-- ./wrapper -->\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
@@ -317,7 +311,7 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     //  tiles:insertAttribute
     org.apache.tiles.jsp.taglib.InsertAttributeTag _jspx_th_tiles_insertAttribute_2 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(org.apache.tiles.jsp.taglib.InsertAttributeTag.class) : new org.apache.tiles.jsp.taglib.InsertAttributeTag();
     _jspx_th_tiles_insertAttribute_2.setJspContext(_jspx_page_context);
-    _jspx_th_tiles_insertAttribute_2.setName("rightContent");
+    _jspx_th_tiles_insertAttribute_2.setName("body");
     _jspx_th_tiles_insertAttribute_2.doTag();
     return false;
   }

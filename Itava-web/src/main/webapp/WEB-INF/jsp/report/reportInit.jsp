@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<form class="form-horizontal">
+<%@ include file="../common/head.jsp"%>
 	<div class="box">
 		<div class="box-header with-border">
 			<h3 class="box-title">用户管理</h3>
@@ -32,8 +32,6 @@
 		</div>
 		<!-- /.box-body -->
 	</div>
-</form>
-<!-- /.box -->
 	<div class="row" >
 		 <div class="col-lg-6" >
 		 	<div class="box">
@@ -211,10 +209,16 @@
 		});
 		
 		myChart.setOption(option);  
+		$(window).resize(function() {
+			 myChart.resize();
+	 	});
 	}
 	
 	function rep2(){
 		var myChart = echarts.init($('#rep2')[0]); 
+		$(window).resize(function() {
+			 myChart.resize();
+	 	});
 		option = {
 			    title: {
 			        text: '未来一周气温变化',
@@ -310,7 +314,9 @@
 	
 	function rep3(){
 		var myChart = echarts.init($('#rep3')[0]); 
-
+		$(window).resize(function() {
+			 myChart.resize();
+	 	});
 		option = {
 		    tooltip: {
 		        trigger: 'item',
@@ -374,7 +380,9 @@
 	
 	function rep4(){
 		var myChart = echarts.init($('#rep4')[0]);
-
+		$(window).resize(function() {
+			 myChart.resize();
+	 	});
 		option = {
 		    tooltip: {
 		        trigger: 'axis'

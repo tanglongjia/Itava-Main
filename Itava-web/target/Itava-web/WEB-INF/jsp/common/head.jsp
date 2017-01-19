@@ -18,7 +18,7 @@
 <!-- bootstrap dialog的样式 -->
 <link rel="stylesheet" href="<%=basePath %>/aframe/bootstrap-dialog/bootstrap-dialog.min.css">
 <!-- 表单校验的bootstrap validator -->
-<link rel="stylesheet" href="<%=basePath %>/aframe/bootstrap-validator/bootstrapValidator.css">
+<link rel="stylesheet" href="<%=basePath %>/aframe/formValidation/formValidation.css">
 
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jquery js文件 -->
@@ -47,4 +47,5 @@
 <!-- bootstrap dialog的js-->
 <script src="<%=basePath%>/aframe/bootstrap-dialog/bootstrap-dialog.min.js"></script>
 <!-- 表单校验的js formValidator.js -->
-<script src="<%=basePath %>/aframe/bootstrap-validator/bootstrapValidator.js"></script>
+<script src="<%=basePath %>/aframe/formValidation/formValidation.js"></script>
+<script src="<%=basePath %>/aframe/formValidation/formValidation_extra.js"></script>

@@ -27,13 +27,13 @@
 		</div>
 		<div class="box-footer">
                 <button type="button" class="btn btn-default pull-right" onclick="closeUser()">关闭</button>
-                <button type="submit" class="btn btn-info pull-right">提交</button>
+                <button type="submit" class="btn btn-info pull-right" >提交</button>
         </div>
 	</div>
 </form>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#userAddForm').bootstrapValidator({
+    $('#userAddForm').formValidation({
 //      live: 'disabled',
       message: 'This value is not valid',
       feedbackIcons: {
@@ -41,7 +41,7 @@ $(document).ready(function() {
           invalid: 'glyphicon glyphicon-remove',
           validating: 'glyphicon glyphicon-refresh'
       },
-        fields: {
+      fields: {
         	formTrueName: {
                 message: '用户名验证失败',
                 validators: {
@@ -58,20 +58,25 @@ $(document).ready(function() {
                 }
             }
         }
-    }).on('success.form.fv', function(e) {
-    	e.preventDefault();
+    }).on('success.form.bv', function(e) {
+        // Prevent form submission
+        e.preventDefault();
+
         // Get the form instance
         var $form = $(e.target);
+
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
+
         // Use Ajax to submit form data
-       /*  $.post($form.attr('action'), $form.serialize(), function(result) {
+        $.post($form.attr('action'), $form.serialize(), function(result) {
             console.log(result);
-        }, 'json'); */
-     })
+        }, 'json');
+    });
 })
 
 function closeUser(){
 	addUserDialog.close();
 }
+
 </script>

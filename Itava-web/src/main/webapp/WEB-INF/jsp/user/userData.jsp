@@ -29,6 +29,8 @@
 <ul id ="example"></ul>
 </div>
 <script>
+
+
 $('#example').bootstrapPaginator({
     currentPage: $('#currentPage').val(),   //当前页
     totalPages: $('#totalPages').val(),     //总页数

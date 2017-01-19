@@ -68,7 +68,8 @@
 		 	if(isleafnode==1){//根节点
 		 		/* var item = {'id':id,'name':menuname,'url':url,'closable':true};
 				closableTab.addTab(item); */
-		 		window.location = "<%=basePath%>/"+url;
+		 		var urlStr = "<%=basePath%>/"+url;
+		 		$('#commonFrame').attr('src',urlStr);
 		 	}   
 		 	//$("#contentDiv").html(menuname);
 			
@@ -80,25 +81,18 @@
 	<div class="wrapper">
 		<tiles:insertAttribute name="header" />
 		<tiles:insertAttribute name="leftMenu" />
-		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<ol class="breadcrumb">
 					<li id="title_dh"></li>
 				</ol>
 			</section>
-			<!-- Main content -->
 			<section class="content">
-				<tiles:insertAttribute name="rightContent" />
+				<tiles:insertAttribute name="body" />
 			</section>
-			<!-- /.content -->
 		</div>
-		<!-- /.content-wrapper -->
 		<tiles:insertAttribute name="footer" />
-		<!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
 		<div class="control-sidebar-bg"></div>
 	</div>
-	<!-- ./wrapper -->
 </body>
 </html>

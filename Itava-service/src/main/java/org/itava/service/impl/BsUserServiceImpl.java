@@ -28,11 +28,13 @@ public class BsUserServiceImpl implements BsUserService {
 		//return list.get(0);
 	}
 	public List<BsUser> selectUserPage(Map param) {
-		String page  = (String) param.get("page");
+		String page  = (String) param.get("pageNumber");
+		System.out.println("page:------------------"+page);
 		int pageNum = 1;
 		if(page!=null && page !=""){
 			pageNum = Integer.parseInt(page);
 		}
+		System.out.println("pageNum:------------------"+pageNum);
 		PageHelper.startPage((pageNum-1)*10+1, pageNum*10);
 		List<BsUser> list = bsUserMapper.selectUserPage(param);
 		return list;

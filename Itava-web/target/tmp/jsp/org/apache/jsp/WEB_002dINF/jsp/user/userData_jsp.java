@@ -77,6 +77,8 @@ public final class userData_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<ul id =\"example\"></ul>\r\n");
       out.write("</div>\r\n");
       out.write("<script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("$('#example').bootstrapPaginator({\r\n");
       out.write("    currentPage: $('#currentPage').val(),   //当前页\r\n");
       out.write("    totalPages: $('#totalPages').val(),     //总页数\r\n");
