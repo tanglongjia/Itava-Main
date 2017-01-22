@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:10 +0800] "GET /itava/main/index HTTP/1.1" 200 8857 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:14 +0800] "GET /itava/aframe/bootstrap-table/bootstrap-table.js HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:14 +0800] "GET /itava/bsResource/getLeftMenu?_=1485076034505 HTTP/1.1" 200 992 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:14 +0800] "GET /itava/bsUser/showUser HTTP/1.1" 200 8373 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:16 +0800] "GET /favicon.ico HTTP/1.1" 200 1150 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:16 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=1&pageSize=10&telephone=&truename=&_=1485076036129 HTTP/1.1" 200 1493 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:17:07:18 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=2&pageSize=10&telephone=&truename=&_=1485076036130 HTTP/1.1" 200 24 

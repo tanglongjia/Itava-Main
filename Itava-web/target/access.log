@@ -1,6 +1,11 @@
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:15 +0800] "GET /itava/main/index HTTP/1.1" 200 8857 
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:19 +0800] "GET /itava/bsResource/getLeftMenu?_=1484745498792 HTTP/1.1" 200 992 
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:19 +0800] "GET /itava/bsUser/showUser HTTP/1.1" 200 8353 
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:20 +0800] "GET /favicon.ico HTTP/1.1" 200 1150 
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:20 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=1&pageSize=10&telephone=&truename=&_=1484745500331 HTTP/1.1" 200 1495 
-0:0:0:0:0:0:0:1 -  -  [18/一月/2017:21:18:23 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=11&pageSize=10&telephone=&truename=&_=1484745500332 HTTP/1.1" 200 1495 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:12 +0800] "GET /itava/main/index HTTP/1.1" 200 8857 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:16 +0800] "GET /itava/aframe/bootstrap-table/bootstrap-table.js HTTP/1.1" 304 0 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:17 +0800] "GET /itava/bsResource/getLeftMenu?_=1485087136760 HTTP/1.1" 200 992 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:17 +0800] "GET /itava/bsUser/showUser HTTP/1.1" 200 8373 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:19 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=1&pageSize=10&telephone=&truename=&_=1485087139424 HTTP/1.1" 200 1493 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:12:22 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=2&pageSize=10&telephone=&truename=&_=1485087139425 HTTP/1.1" 200 24 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:14:04 +0800] "GET /itava/main/index HTTP/1.1" 200 8857 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:14:04 +0800] "GET /itava/bsUser/showUser HTTP/1.1" 200 8373 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:14:04 +0800] "GET /itava/bsResource/getLeftMenu?_=1485087244537 HTTP/1.1" 200 992 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:14:05 +0800] "GET /itava/bsUser/selectUserPage?pageNumber=1&pageSize=10&telephone=&truename=&_=1485087244848 HTTP/1.1" 200 1493 
+0:0:0:0:0:0:0:1 -  -  [22/一月/2017:20:14:05 +0800] "GET /favicon.ico HTTP/1.1" 200 1150 

@@ -54,6 +54,8 @@ public class BsUserController {
     	if(!"".equals(request.getParameter("telephone"))){
     		param.put("telephone", request.getParameter("telephone"));
     	}
+    	param.put("pageNumber", request.getParameter("pageNumber"));
+    	param.put("pageSize", request.getParameter("pageSize"));
         List<BsUser> userList = this.bsUserService.selectUserPage(param);
       /*  PageInfo<BsUser> pageInfo = new PageInfo<BsUser>(userList);
         model.addAttribute("pageInfo", pageInfo);  

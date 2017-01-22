@@ -59,11 +59,11 @@ public final class body_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<!-- 用于展示所有右侧区域的内容 -->\r\n");
       out.write("\t<iframe name=\"commonFrame\" id=\"commonFrame\" src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${basePath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/itava/bsUser/showUser\"   frameborder=\"0\" width=\"100%\" scrolling=\"yes\" marginheight=\"0\" marginwidth=\"0\" onLoad=\"changeFrameHeight()\" ></iframe>\r\n");
+      out.write("/itava/bsUser/showUser\"   frameborder=\"0\" width=\"100%\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" onLoad=\"changeFrameHeight()\" ></iframe>\r\n");
       out.write("\t<script type=\"text/javascript\" language=\"javascript\">     \r\n");
       out.write("\tfunction changeFrameHeight(){\r\n");
       out.write("\t    var ifm= document.getElementById(\"commonFrame\"); \r\n");
-      out.write("\t    ifm.height=document.documentElement.clientHeight+20;\r\n");
+      out.write("\t    ifm.height=document.documentElement.clientHeight;\r\n");
       out.write("\t}\r\n");
       out.write("\twindow.onresize=function(){  \r\n");
       out.write("\t     changeFrameHeight();  \r\n");

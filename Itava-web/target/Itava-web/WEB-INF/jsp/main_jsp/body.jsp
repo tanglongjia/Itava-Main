@@ -13,11 +13,11 @@
 </head>
 <body>
 	<!-- 用于展示所有右侧区域的内容 -->
-	<iframe name="commonFrame" id="commonFrame" src="${basePath}/itava/bsUser/showUser"   frameborder="0" width="100%" scrolling="yes" marginheight="0" marginwidth="0" onLoad="changeFrameHeight()" ></iframe>
+	<iframe name="commonFrame" id="commonFrame" src="${basePath}/itava/bsUser/showUser"   frameborder="0" width="100%" scrolling="no" marginheight="0" marginwidth="0" onLoad="changeFrameHeight()" ></iframe>
 	<script type="text/javascript" language="javascript">     
 	function changeFrameHeight(){
 	    var ifm= document.getElementById("commonFrame"); 
-	    ifm.height=document.documentElement.clientHeight+20;
+	    ifm.height=document.documentElement.clientHeight;
 	}
 	window.onresize=function(){  
 	     changeFrameHeight();  

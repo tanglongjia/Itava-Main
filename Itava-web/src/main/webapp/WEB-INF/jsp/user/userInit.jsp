@@ -88,6 +88,7 @@
            method: 'get',
             //是否显示行间隔色
            striped: true,
+           height:490,
            //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）     
            cache: false,    
            //是否显示分页（*）  
@@ -107,12 +108,13 @@
            url: "./selectUserPage",
            //默认值为 'limit',传给服务端的参数为：limit, offset, search, sort, order Else
            //queryParamsType:'',   
-           ////查询参数,每次调用是会带上这个参数，可自定义                         
+           ////查询参数,每次调用是会带上这个参数，可自定义      
+           queryParamsType:'limit',
           queryParams : function(params) {
                var truename = $('#truename').val();
                var telephone = $("#telephone").val();
                return {
-                     pageNumber: params.offset+1,
+                     pageNumber: params.pageNumber,
                      pageSize: params.limit,
                      telephone:telephone,
                      truename:truename

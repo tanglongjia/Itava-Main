@@ -241,6 +241,7 @@ public final class userInit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("           method: 'get',\r\n");
       out.write("            //是否显示行间隔色\r\n");
       out.write("           striped: true,\r\n");
+      out.write("           height:490,\r\n");
       out.write("           //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）     \r\n");
       out.write("           cache: false,    \r\n");
       out.write("           //是否显示分页（*）  \r\n");
@@ -260,12 +261,13 @@ public final class userInit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("           url: \"./selectUserPage\",\r\n");
       out.write("           //默认值为 'limit',传给服务端的参数为：limit, offset, search, sort, order Else\r\n");
       out.write("           //queryParamsType:'',   \r\n");
-      out.write("           ////查询参数,每次调用是会带上这个参数，可自定义                         \r\n");
+      out.write("           ////查询参数,每次调用是会带上这个参数，可自定义      \r\n");
+      out.write("           queryParamsType:'limit',\r\n");
       out.write("          queryParams : function(params) {\r\n");
       out.write("               var truename = $('#truename').val();\r\n");
       out.write("               var telephone = $(\"#telephone\").val();\r\n");
       out.write("               return {\r\n");
-      out.write("                     pageNumber: params.offset+1,\r\n");
+      out.write("                     pageNumber: params.pageNumber,\r\n");
       out.write("                     pageSize: params.limit,\r\n");
       out.write("                     telephone:telephone,\r\n");
       out.write("                     truename:truename\r\n");

@@ -235,6 +235,7 @@
       	<if test="telephone != null and telephone !='' " >
         		AND telephone like '%${telephone}%'
       	</if>
+      	limit #{startNum},#{endNum}
 	  </select>
   
 </mapper>
