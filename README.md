@@ -23,6 +23,12 @@ Itava-Main为主模块，本项目为maven多模块项目，使用spring mvc、s
 ##jquery的formValiator插件
 使用formValiator进行表单校验
 
+##easyUI 
+使用easyUI中的treegrid进行菜单维护
+
+##Ueditor
+使用Ueditor进行新闻的保存修改
+
 ##系统示意图
 ![用户示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/1.png)
 ![报表示例](https://github.com/tanglongjia/Itava-Main/blob/master/Itava-web/2.png)
