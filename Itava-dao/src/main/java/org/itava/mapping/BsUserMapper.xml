@@ -230,12 +230,12 @@
 	    		AND departId = #{departid,jdbcType=INTEGER}
 	    </if>
 	    <if test="truename != null and truename !='' " >
-        		AND trueName like '%${truename}%'
+        		AND trueName like concat(concat('%',#{truename}),'%')   
       	</if>
       	<if test="telephone != null and telephone !='' " >
-        		AND telephone like '%${telephone}%'
+        		AND telephone like concat(concat('%',#{telephone}),'%')   
       	</if>
-      	limit #{startNum},#{endNum}
+      		limit #{startNum},#{endNum}
 	  </select>
   
 </mapper>

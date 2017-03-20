@@ -7,4 +7,6 @@ import org.itava.pojo.BsResource;
 
 public interface BsResourceService {
 	public List<BsResource> getLeftMenu(Map<String,Integer> paramMap);
+	
+	public List<BsResource> getMenuByParentId(Map<String,Integer> paramMap);
 }

@@ -30,15 +30,12 @@ public class BsUserServiceImpl implements BsUserService {
 	public List<BsUser> selectUserPage(Map param) {
 		String page  = (String) param.get("pageNumber");
 		String pageSize = (String) param.get("pageSize");
-		System.out.println("page:------------------"+page);
 		int pageNum = 1;
 		if(page!=null && page !=""){
 			pageNum = Integer.parseInt(page);
 		}
-		System.out.println("pageNum:------------------"+pageNum);
 		int startNum = (pageNum-1)*new Integer(pageSize);
 		int endNum = pageNum * new Integer(pageSize);
-		System.out.println("startNum:------------------"+startNum);
 		//PageHelper.startPage(startNum, endNum);
 		param.put("startNum", startNum);
 		param.put("endNum", endNum);

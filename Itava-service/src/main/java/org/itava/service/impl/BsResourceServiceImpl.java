@@ -17,8 +17,11 @@ public class BsResourceServiceImpl implements BsResourceService {
     private BsResourceMapper bsResourceMapper;
 	
 	public List<BsResource> getLeftMenu(Map<String, Integer> paramMap) {
-		System.out.println("---------------"+bsResourceMapper.getLeftMenu(paramMap));
 		return bsResourceMapper.getLeftMenu(paramMap);
+	}
+
+	public List<BsResource> getMenuByParentId(Map<String, Integer> paramMap) {
+		return bsResourceMapper.getMenuByParentId(paramMap);
 	}
 
 }

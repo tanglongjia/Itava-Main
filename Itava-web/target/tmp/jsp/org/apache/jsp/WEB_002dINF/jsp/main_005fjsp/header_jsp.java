@@ -3,6 +3,8 @@ package org.apache.jsp.WEB_002dINF.jsp.main_005fjsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.util.*;
+import java.text.*;
 
 public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -30,7 +32,7 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,14 +43,15 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("  \r\n");
       out.write("  <!-- Main Header -->\r\n");
       out.write("  <header class=\"main-header\">\r\n");
       out.write("    <!-- Logo -->\r\n");
       out.write("    <a href=\"#\" class=\"logo\">\r\n");
       out.write("      <!-- mini logo for sidebar mini 50x50 pixels -->\r\n");
-      out.write("      <span class=\"logo-mini\"><b>Itava</b></span>\r\n");
+      out.write("      <span class=\"logo-mini\"><b>56</b></span>\r\n");
       out.write("      <!-- logo for regular state and mobile devices -->\r\n");
-      out.write("      <span class=\"logo-lg\"><b>Itava-Main</b></span>\r\n");
+      out.write("      <span class=\"logo-lg\"><b>56帮你工作室</b></span>\r\n");
       out.write("    </a>\r\n");
       out.write("    <!-- Header Navbar -->\r\n");
       out.write("    <nav class=\"navbar navbar-static-top\" role=\"navigation\">\r\n");

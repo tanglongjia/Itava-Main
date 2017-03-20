@@ -15,12 +15,21 @@
   	<put-attribute name="body" value="/WEB-INF/jsp/main_jsp/body.jsp" />
   </definition>
   
+  <!-- 1、用户信息 -->
   <definition name="bsUser" extends="content">
     <put-attribute name="body" value="/WEB-INF/jsp/user/userInit.jsp"/>
   </definition>
   
+   <!-- 2、报表信息 -->
    <definition name="report" extends="content">
     <put-attribute name="body" value="/WEB-INF/jsp/report/reportInit.jsp"/>
   </definition>
+  
+   
+   <!-- 2、报表信息 -->
+   <definition name="bsResource" extends="content">
+    <put-attribute name="body" value="/WEB-INF/jsp/resource/resourceInit.jsp"/>
+  </definition>
+  
   
 </tiles-definitions>

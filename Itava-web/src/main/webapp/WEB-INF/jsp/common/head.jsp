@@ -19,10 +19,13 @@
 <link rel="stylesheet" href="<%=basePath %>/aframe/bootstrap-dialog/bootstrap-dialog.min.css">
 <!-- 表单校验的bootstrap validator -->
 <link rel="stylesheet" href="<%=basePath %>/aframe/formValidation/formValidation.css">
+<!-- easyUI样式 -->
+<link rel="stylesheet" href="<%=basePath %>/aframe/jquery-easyui-1.5.1/easyui.css">
+<link rel="stylesheet" href="<%=basePath %>/aframe/jquery-easyui-1.5.1/icon.css">
 
 <!-- REQUIRED JS SCRIPTS -->
 <!-- jquery js文件 -->
-<script type="text/javascript" src="<%=basePath%>/commonjs/jQuery-2.2.0.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>/commonjs/jquery-1.9.1.js"></script>
 <!-- bootstrap的js文件、bootstrap table -->
 <script src="<%=basePath%>/aframe/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
@@ -49,3 +52,5 @@
 <!-- 表单校验的js formValidator.js -->
 <script src="<%=basePath %>/aframe/formValidation/formValidation.js"></script>
 <script src="<%=basePath %>/aframe/formValidation/formValidation_extra.js"></script>
+<!-- easyUI的js -->
+<script src="<%=basePath %>/aframe/jquery-easyui-1.5.1/jquery.easyui.min.js"></script>

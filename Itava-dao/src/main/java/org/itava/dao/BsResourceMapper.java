@@ -19,4 +19,6 @@ public interface BsResourceMapper {
     int updateByPrimaryKey(BsResource record);
     
     List<BsResource> getLeftMenu(Map<String, Integer> paramMap);
+    
+    List<BsResource> getMenuByParentId(Map<String, Integer> paramMap);
 }

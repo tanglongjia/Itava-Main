@@ -1,5 +1,6 @@
 package org.itava.controller;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class BsUserController {
     	try {
     		truename = request.getParameter("truename");
     		if(truename!=null && truename !=""){
-    			truename = new String(truename.getBytes("ISO-8859-1"), "UTF-8"); 
+    			truename = URLDecoder.decode(truename, "UTF-8"); 
     		}
 			request.setCharacterEncoding("UTF-8");
 		} catch (UnsupportedEncodingException e) {
@@ -57,12 +58,16 @@ public class BsUserController {
     	param.put("pageNumber", request.getParameter("pageNumber"));
     	param.put("pageSize", request.getParameter("pageSize"));
         List<BsUser> userList = this.bsUserService.selectUserPage(param);
+        int total = 0;
+        if(userList!=null){
+        	 total = userList.size();
+        }
       /*  PageInfo<BsUser> pageInfo = new PageInfo<BsUser>(userList);
         model.addAttribute("pageInfo", pageInfo);  
         model.addAttribute("userList", userList);*/
         Map<String,Object> resultMap = new HashMap<String,Object>();
         resultMap.put("rows", userList);
-        resultMap.put("total", "11");
+        resultMap.put("total", total);
         String jsonStr = JSON.toJSONString(resultMap);
         return jsonStr;  
     }

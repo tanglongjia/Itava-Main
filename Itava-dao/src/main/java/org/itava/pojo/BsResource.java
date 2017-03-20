@@ -8,14 +8,19 @@ public class BsResource {
     private Integer id;
 
     private String menucode;
+    
 
     private String menuurl;
 
     private String menuname;
-
+    
     private Integer menulevel;
 
     private Integer isleafnode;
+    
+    private String leafNode;
+    
+    private String state;
 
     private Integer parentid;
 
@@ -153,5 +158,22 @@ public class BsResource {
 
 	public void setChildList(List<BsResource> childList) {
 		this.childList = childList;
+	}
+
+
+	public String getLeafNode() {
+		return leafNode;
+	}
+
+	public void setLeafNode(String leafNode) {
+		this.leafNode = leafNode;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 }

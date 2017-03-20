@@ -202,5 +202,12 @@
 		from bs_resource
 		where parentId = #{parentid,jdbcType=INTEGER}
 	</select>
+	
+	<select id="getMenuByParentId" parameterType="java.util.Map" resultType="org.itava.pojo.BsResource">
+		select id, menuCode, menuUrl, menuName, menuLevel, isLeafNode, case isLeafNode WHEN 1 THEN '是' WHEN 0 THEN '否' end  as LeafNode,
+		parentId, menuImgPath, menuDesc, created, createdby, updated, updatedby, status
+    	from bs_resource
+    	where parentId = #{parentid,jdbcType=INTEGER} and status = 1
+	</select>
   
 </mapper>

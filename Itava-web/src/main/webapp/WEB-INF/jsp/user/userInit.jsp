@@ -32,8 +32,8 @@
 						placeholder="手机号">
 				</div>
 				<div class="col-sm-4">
-					<button type="button" class="btn btn-info pull-right" style="margin-left: 3px;" id="search">查询</button>
-					<button type="button" class="btn btn-info pull-right"  id="add">新增</button>
+					<button type="button" class="btn btn-info pull-right" style="margin-left: 3px;"  id="add">新增</button>
+					<button type="button" class="btn btn-info pull-right"  id="search">查询</button>
 				</div>
 			</div>
 		</div>
@@ -66,24 +66,7 @@
 	}
 	
 	function search(){
-		/* $.ajax({
-			mimeType: 'text/html; charset=utf-8',
-			url: './selectUserPage',
-			type: 'GET',
-			data : {
-				truename  : $("#truename").val(),
-				telephone : $("#telephone").val()
-			},
-			success: function(data) {
-				$('#userDiv').html(data);
-			},
-			error: function (jqXHR, textStatus, errorThrown) {
-				alert(errorThrown);
-			},
-			dataType: "html"
-		}); */
-		
-		$('#querylist').bootstrapTable({
+		$('#querylist').bootstrapTable('destroy').bootstrapTable({
             //请求方法
            method: 'get',
             //是否显示行间隔色
@@ -110,7 +93,7 @@
            //queryParamsType:'',   
            ////查询参数,每次调用是会带上这个参数，可自定义      
            queryParamsType:'limit',
-          queryParams : function(params) {
+           queryParams : function(params) {
                var truename = $('#truename').val();
                var telephone = $("#telephone").val();
                return {
