@@ -29,7 +29,12 @@ public class BsUserController {
       
     @RequestMapping("/showUser")  
     public String toIndex(HttpServletRequest request,Model model){ 
-        BsUser user = this.bsUserService.getUserById(new Integer(1));  
+        BsUser user = null;
+		try {
+			user = this.bsUserService.getUserById(new Integer(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}  
         model.addAttribute("user", user);  
         return "bsUser";  
     }  
@@ -57,7 +62,12 @@ public class BsUserController {
     	}
     	param.put("pageNumber", request.getParameter("pageNumber"));
     	param.put("pageSize", request.getParameter("pageSize"));
-        List<BsUser> userList = this.bsUserService.selectUserPage(param);
+        List<BsUser> userList = null;
+		try {
+			userList = this.bsUserService.selectUserPage(param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
         int total = 0;
         if(userList!=null){
         	 total = userList.size();

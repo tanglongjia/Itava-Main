@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.itava.dao.SNewsMapper" >
+  <resultMap id="BaseResultMap" type="org.itava.pojo.SNews" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="newsTitle" property="newstitle" jdbcType="VARCHAR" />
+    <result column="newsCategory" property="newscategory" jdbcType="VARCHAR" />
+    <result column="newsUrl" property="newsurl" jdbcType="VARCHAR" />
+    <result column="readCount" property="readcount" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="createdby" property="createdby" jdbcType="INTEGER" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="updatedby" property="updatedby" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="createrName" property="createrName" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="org.itava.pojo.SNews" extends="BaseResultMap" >
+    <result column="newsContent" property="newscontent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, newsTitle, newsCategory, newsUrl,readCount, created, createdby, updated, updatedby, status,createrName
+  </sql>
+  <sql id="Blob_Column_List" >
+    newsContent
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from s_news
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from s_news
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.itava.pojo.SNews" >
+    insert into s_news ( newsTitle, newsCategory, newsUrl,
+      readCount, created, createdby, 
+      updated, updatedby, status, 
+      newsContent,createrName)
+    values ( #{newstitle,jdbcType=VARCHAR}, #{newscategory,jdbcType=VARCHAR}, #{newsurl,jdbcType=VARCHAR},
+      #{readcount,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{createdby,jdbcType=INTEGER}, 
+      #{updated,jdbcType=TIMESTAMP}, #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{newscontent,jdbcType=LONGVARCHAR},#{createrName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.itava.pojo.SNews" >
+    insert into s_news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="newstitle != null" >
+        newsTitle,
+      </if>
+      <if test="newscategory != null" >
+        newsCategory,
+      </if>
+      <if test="readcount != null" >
+        readCount,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="createdby != null" >
+        createdby,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="updatedby != null" >
+        updatedby,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="newscontent != null" >
+        newsContent,
+      </if>
+      <if test="newsurl != null" >
+        newsUrl,
+      </if>
+      <if test="createrName != null" >
+        createrName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="newstitle != null" >
+        #{newstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newscategory != null" >
+        #{newscategory,jdbcType=VARCHAR},
+      </if>
+      <if test="readcount != null" >
+        #{readcount,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdby != null" >
+        #{createdby,jdbcType=INTEGER},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedby != null" >
+        #{updatedby,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="newscontent != null" >
+        #{newscontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="newsurl != null" >
+        newsUrl = #{newsurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createrName != null" >
+        createrName = #{createrName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.itava.pojo.SNews" >
+    update s_news
+    <set >
+      <if test="newstitle != null" >
+        newsTitle = #{newstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newscategory != null" >
+        newsCategory = #{newscategory,jdbcType=VARCHAR},
+      </if>
+      <if test="readcount != null" >
+        readCount = #{readcount,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdby != null" >
+        createdby = #{createdby,jdbcType=INTEGER},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedby != null" >
+        updatedby = #{updatedby,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="newscontent != null" >
+        newsContent = #{newscontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="newsurl != null" >
+        newsUrl = #{newsurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createrName != null" >
+        createrName = #{createrName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="org.itava.pojo.SNews" >
+    update s_news
+    set newsTitle = #{newstitle,jdbcType=VARCHAR},
+      newsCategory = #{newscategory,jdbcType=VARCHAR},
+      newsUrl = #{newsUrl,jdbcType=VARCHAR},
+      readCount = #{readcount,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      createdby = #{createdby,jdbcType=INTEGER},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      updatedby = #{updatedby,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      newsContent = #{newscontent,jdbcType=LONGVARCHAR},
+      createrName = #{createrName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.itava.pojo.SNews" >
+    update s_news
+    set newsTitle = #{newstitle,jdbcType=VARCHAR},
+      newsCategory = #{newscategory,jdbcType=VARCHAR},
+      newsUrl = #{newsUrl,jdbcType=VARCHAR},
+      readCount = #{readcount,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      createdby = #{createdby,jdbcType=INTEGER},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      updatedby = #{updatedby,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      createrName = #{createrName,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectSNewsListPage" parameterType="java.util.Map" resultType="org.itava.pojo.SNews">
+  	select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from s_news
+    where 1 = 1
+     <if test="newsTitle != null and newsTitle!=''" >
+        and newsTitle = #{newsTitle,jdbcType=VARCHAR}
+      </if>
+      <if test="newsCategory != null and newsCategory!=''" >
+        and newsCategory = #{newscategory,jdbcType=VARCHAR}
+      </if> 
+     ORDER BY created desc
+     limit #{startNum},#{endNum} 
+  </select>
+</mapper>

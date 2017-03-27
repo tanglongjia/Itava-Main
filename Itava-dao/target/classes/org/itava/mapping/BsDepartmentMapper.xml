@@ -7,9 +7,9 @@
     <result column="departCode" property="departcode" jdbcType="VARCHAR" />
     <result column="departLevel" property="departlevel" jdbcType="INTEGER" />
     <result column="isLeafNode" property="isleafnode" jdbcType="INTEGER" />
-    <result column="created" property="created" jdbcType="DATE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="createdby" property="createdby" jdbcType="INTEGER" />
-    <result column="updated" property="updated" jdbcType="DATE" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
     <result column="updatedby" property="updatedby" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
@@ -33,8 +33,8 @@
       createdby, updated, updatedby, 
       status)
     values (#{id,jdbcType=INTEGER}, #{departname,jdbcType=VARCHAR}, #{departcode,jdbcType=VARCHAR}, 
-      #{departlevel,jdbcType=INTEGER}, #{isleafnode,jdbcType=INTEGER}, #{created,jdbcType=DATE}, 
-      #{createdby,jdbcType=INTEGER}, #{updated,jdbcType=DATE}, #{updatedby,jdbcType=INTEGER}, 
+      #{departlevel,jdbcType=INTEGER}, #{isleafnode,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, 
+      #{createdby,jdbcType=INTEGER}, #{updated,jdbcType=TIMESTAMP}, #{updatedby,jdbcType=INTEGER}, 
       #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="org.itava.pojo.BsDepartment" >
@@ -88,13 +88,13 @@
         #{isleafnode,jdbcType=INTEGER},
       </if>
       <if test="created != null" >
-        #{created,jdbcType=DATE},
+        #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        #{updated,jdbcType=DATE},
+        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         #{updatedby,jdbcType=INTEGER},
@@ -120,13 +120,13 @@
         isLeafNode = #{isleafnode,jdbcType=INTEGER},
       </if>
       <if test="created != null" >
-        created = #{created,jdbcType=DATE},
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         createdby = #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        updated = #{updated,jdbcType=DATE},
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         updatedby = #{updatedby,jdbcType=INTEGER},
@@ -143,9 +143,9 @@
       departCode = #{departcode,jdbcType=VARCHAR},
       departLevel = #{departlevel,jdbcType=INTEGER},
       isLeafNode = #{isleafnode,jdbcType=INTEGER},
-      created = #{created,jdbcType=DATE},
+      created = #{created,jdbcType=TIMESTAMP},
       createdby = #{createdby,jdbcType=INTEGER},
-      updated = #{updated,jdbcType=DATE},
+      updated = #{updated,jdbcType=TIMESTAMP},
       updatedby = #{updatedby,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

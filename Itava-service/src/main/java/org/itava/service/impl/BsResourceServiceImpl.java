@@ -16,11 +16,11 @@ public class BsResourceServiceImpl implements BsResourceService {
 	@Resource  
     private BsResourceMapper bsResourceMapper;
 	
-	public List<BsResource> getLeftMenu(Map<String, Integer> paramMap) {
+	public List<BsResource> getLeftMenu(Map<String, Integer> paramMap)throws Exception {
 		return bsResourceMapper.getLeftMenu(paramMap);
 	}
 
-	public List<BsResource> getMenuByParentId(Map<String, Integer> paramMap) {
+	public List<BsResource> getMenuByParentId(Map<String, Object> paramMap)throws Exception {
 		return bsResourceMapper.getMenuByParentId(paramMap);
 	}
 

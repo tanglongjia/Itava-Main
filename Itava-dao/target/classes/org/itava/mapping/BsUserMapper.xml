@@ -12,9 +12,9 @@
     <result column="departId" property="departid" jdbcType="INTEGER" />
     <result column="lastLoginTime" property="lastlogintime" jdbcType="TIMESTAMP" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="created" property="created" jdbcType="DATE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="createdby" property="createdby" jdbcType="INTEGER" />
-    <result column="updated" property="updated" jdbcType="DATE" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
     <result column="updatedby" property="updatedby" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="email" property="email" jdbcType="VARCHAR" />
@@ -43,8 +43,8 @@
     values (#{id,jdbcType=INTEGER}, #{loginname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{truename,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, 
       #{telephone,jdbcType=VARCHAR}, #{departid,jdbcType=INTEGER}, #{lastlogintime,jdbcType=TIMESTAMP}, 
-      #{remark,jdbcType=VARCHAR}, #{created,jdbcType=DATE}, #{createdby,jdbcType=INTEGER}, 
-      #{updated,jdbcType=DATE}, #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, #{createdby,jdbcType=INTEGER}, 
+      #{updated,jdbcType=TIMESTAMP}, #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
       #{email,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="org.itava.pojo.BsUser" >
@@ -131,13 +131,13 @@
         #{remark,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
-        #{created,jdbcType=DATE},
+        #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        #{updated,jdbcType=DATE},
+        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         #{updatedby,jdbcType=INTEGER},
@@ -181,13 +181,13 @@
         remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
-        created = #{created,jdbcType=DATE},
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         createdby = #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        updated = #{updated,jdbcType=DATE},
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         updatedby = #{updatedby,jdbcType=INTEGER},
@@ -212,9 +212,9 @@
       departId = #{departid,jdbcType=INTEGER},
       lastLoginTime = #{lastlogintime,jdbcType=TIMESTAMP},
       remark = #{remark,jdbcType=VARCHAR},
-      created = #{created,jdbcType=DATE},
+      created = #{created,jdbcType=TIMESTAMP},
       createdby = #{createdby,jdbcType=INTEGER},
-      updated = #{updated,jdbcType=DATE},
+      updated = #{updated,jdbcType=TIMESTAMP},
       updatedby = #{updatedby,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       email = #{email,jdbcType=VARCHAR}

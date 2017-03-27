@@ -17,7 +17,7 @@ public class BsUserServiceImpl implements BsUserService {
     @Resource  
     private BsUserMapper bsUserMapper;
 
-	public BsUser getUserById(int userId) {
+	public BsUser getUserById(int userId) throws Exception{
 		/*PageHelper.startPage(1, 8);
 		List<BsUser> list = bsUserMapper.selectUserPage(24);
 		System.out.println(list.size());
@@ -27,7 +27,7 @@ public class BsUserServiceImpl implements BsUserService {
 		return this.bsUserMapper.selectByPrimaryKey(userId);  
 		//return list.get(0);
 	}
-	public List<BsUser> selectUserPage(Map param) {
+	public List<BsUser> selectUserPage(Map param)throws Exception {
 		String page  = (String) param.get("pageNumber");
 		String pageSize = (String) param.get("pageSize");
 		int pageNum = 1;

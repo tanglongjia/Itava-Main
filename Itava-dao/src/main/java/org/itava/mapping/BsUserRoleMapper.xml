@@ -5,9 +5,9 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="roleId" property="roleid" jdbcType="INTEGER" />
-    <result column="created" property="created" jdbcType="DATE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="createdby" property="createdby" jdbcType="INTEGER" />
-    <result column="updated" property="updated" jdbcType="DATE" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
     <result column="updatedby" property="updatedby" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
@@ -29,7 +29,7 @@
       created, createdby, updated, 
       updatedby, status)
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, 
-      #{created,jdbcType=DATE}, #{createdby,jdbcType=INTEGER}, #{updated,jdbcType=DATE}, 
+      #{created,jdbcType=TIMESTAMP}, #{createdby,jdbcType=INTEGER}, #{updated,jdbcType=TIMESTAMP}, 
       #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="org.itava.pojo.BsUserRole" >
@@ -71,13 +71,13 @@
         #{roleid,jdbcType=INTEGER},
       </if>
       <if test="created != null" >
-        #{created,jdbcType=DATE},
+        #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        #{updated,jdbcType=DATE},
+        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         #{updatedby,jdbcType=INTEGER},
@@ -97,13 +97,13 @@
         roleId = #{roleid,jdbcType=INTEGER},
       </if>
       <if test="created != null" >
-        created = #{created,jdbcType=DATE},
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         createdby = #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        updated = #{updated,jdbcType=DATE},
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         updatedby = #{updatedby,jdbcType=INTEGER},
@@ -118,9 +118,9 @@
     update bs_user_role
     set userId = #{userid,jdbcType=INTEGER},
       roleId = #{roleid,jdbcType=INTEGER},
-      created = #{created,jdbcType=DATE},
+      created = #{created,jdbcType=TIMESTAMP},
       createdby = #{createdby,jdbcType=INTEGER},
-      updated = #{updated,jdbcType=DATE},
+      updated = #{updated,jdbcType=TIMESTAMP},
       updatedby = #{updatedby,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

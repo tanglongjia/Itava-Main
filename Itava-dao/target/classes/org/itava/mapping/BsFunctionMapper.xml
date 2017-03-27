@@ -6,9 +6,9 @@
     <result column="funName" property="funname" jdbcType="VARCHAR" />
     <result column="funCode" property="funcode" jdbcType="VARCHAR" />
     <result column="funDesc" property="fundesc" jdbcType="VARCHAR" />
-    <result column="created" property="created" jdbcType="DATE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="createdby" property="createdby" jdbcType="INTEGER" />
-    <result column="updated" property="updated" jdbcType="DATE" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
     <result column="updatedby" property="updatedby" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
@@ -31,8 +31,8 @@
       updated, updatedby, status
       )
     values (#{id,jdbcType=INTEGER}, #{funname,jdbcType=VARCHAR}, #{funcode,jdbcType=VARCHAR}, 
-      #{fundesc,jdbcType=VARCHAR}, #{created,jdbcType=DATE}, #{createdby,jdbcType=INTEGER}, 
-      #{updated,jdbcType=DATE}, #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
+      #{fundesc,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, #{createdby,jdbcType=INTEGER}, 
+      #{updated,jdbcType=TIMESTAMP}, #{updatedby,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.itava.pojo.BsFunction" >
@@ -80,13 +80,13 @@
         #{fundesc,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
-        #{created,jdbcType=DATE},
+        #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        #{updated,jdbcType=DATE},
+        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         #{updatedby,jdbcType=INTEGER},
@@ -109,13 +109,13 @@
         funDesc = #{fundesc,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
-        created = #{created,jdbcType=DATE},
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="createdby != null" >
         createdby = #{createdby,jdbcType=INTEGER},
       </if>
       <if test="updated != null" >
-        updated = #{updated,jdbcType=DATE},
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="updatedby != null" >
         updatedby = #{updatedby,jdbcType=INTEGER},
@@ -131,9 +131,9 @@
     set funName = #{funname,jdbcType=VARCHAR},
       funCode = #{funcode,jdbcType=VARCHAR},
       funDesc = #{fundesc,jdbcType=VARCHAR},
-      created = #{created,jdbcType=DATE},
+      created = #{created,jdbcType=TIMESTAMP},
       createdby = #{createdby,jdbcType=INTEGER},
-      updated = #{updated,jdbcType=DATE},
+      updated = #{updated,jdbcType=TIMESTAMP},
       updatedby = #{updatedby,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

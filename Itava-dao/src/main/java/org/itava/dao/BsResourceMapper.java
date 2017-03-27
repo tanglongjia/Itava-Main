@@ -20,5 +20,5 @@ public interface BsResourceMapper {
     
     List<BsResource> getLeftMenu(Map<String, Integer> paramMap);
     
-    List<BsResource> getMenuByParentId(Map<String, Integer> paramMap);
+    List<BsResource> getMenuByParentId(Map<String, Object> paramMap);
 }

@@ -1,10 +1,9 @@
 package org.itava.pojo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class BsResource {
+public class BsResource extends BsBaseBean {
     private Integer id;
 
     private String menucode;
@@ -28,17 +27,7 @@ public class BsResource {
 
     private String menudesc;
 
-    private Date created;
-
-    private Integer createdby;
-
-    private Date updated;
-
-    private Integer updatedby;
-
-    private Integer status;
-    
-    private List<BsResource> childList=new ArrayList<BsResource>();
+    private List<BsResource> children=new ArrayList<BsResource>();
 
     public Integer getId() {
         return id;
@@ -112,54 +101,6 @@ public class BsResource {
         this.menudesc = menudesc == null ? null : menudesc.trim();
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Integer getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(Integer createdby) {
-        this.createdby = createdby;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Integer getUpdatedby() {
-        return updatedby;
-    }
-
-    public void setUpdatedby(Integer updatedby) {
-        this.updatedby = updatedby;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-	public List<BsResource> getChildList() {
-		return childList;
-	}
-
-	public void setChildList(List<BsResource> childList) {
-		this.childList = childList;
-	}
-
 
 	public String getLeafNode() {
 		return leafNode;
@@ -175,5 +116,13 @@ public class BsResource {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public List<BsResource> getChildren() {
+		return children;
+	}
+
+	public void setChildren(List<BsResource> children) {
+		this.children = children;
 	}
 }

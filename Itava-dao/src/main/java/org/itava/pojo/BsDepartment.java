@@ -1,8 +1,7 @@
 package org.itava.pojo;
 
-import java.util.Date;
 
-public class BsDepartment {
+public class BsDepartment extends BsBaseBean {
     private Integer id;
 
     private String departname;
@@ -13,15 +12,7 @@ public class BsDepartment {
 
     private Integer isleafnode;
 
-    private Date created;
-
-    private Integer createdby;
-
-    private Date updated;
-
-    private Integer updatedby;
-
-    private Integer status;
+    
 
     public Integer getId() {
         return id;
@@ -63,43 +54,4 @@ public class BsDepartment {
         this.isleafnode = isleafnode;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Integer getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(Integer createdby) {
-        this.createdby = createdby;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Integer getUpdatedby() {
-        return updatedby;
-    }
-
-    public void setUpdatedby(Integer updatedby) {
-        this.updatedby = updatedby;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 }

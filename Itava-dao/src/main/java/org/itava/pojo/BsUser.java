@@ -2,7 +2,7 @@ package org.itava.pojo;
 
 import java.util.Date;
 
-public class BsUser {
+public class BsUser extends BsBaseBean{
     private Integer id;
 
     private String loginname;
@@ -22,16 +22,6 @@ public class BsUser {
     private Date lastlogintime;
 
     private String remark;
-
-    private Date created;
-
-    private Integer createdby;
-
-    private Date updated;
-
-    private Integer updatedby;
-
-    private Integer status;
 
     private String email;
 
@@ -115,45 +105,6 @@ public class BsUser {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Integer getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(Integer createdby) {
-        this.createdby = createdby;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
-    public Integer getUpdatedby() {
-        return updatedby;
-    }
-
-    public void setUpdatedby(Integer updatedby) {
-        this.updatedby = updatedby;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 
     public String getEmail() {
         return email;
